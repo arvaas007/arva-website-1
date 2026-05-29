@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { reactive, ref } from 'vue'
 const form = reactive({
   name: '',
   email: '',
@@ -20,8 +21,8 @@ const questions = [
     a: 'You can open the Writings page to read selected articles connected from Blogger as the content backend.'
   },
   {
-    q: 'What is Arva's Dream?',
-    a: 'Arva's dream is to contribute meaningfully to the field of Islamic Economics and Social Finance through research, teaching, and practical applications.'
+    q: "What is Arva's Dream?",
+    a: "Arva's dream is to contribute meaningfully to the field of Islamic Economics and Social Finance through research, teaching, and practical applications."
   }
 ]
 
