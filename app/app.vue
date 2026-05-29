@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 // Pengaturan Meta & Favicon 
 useHead({
@@ -12,70 +12,110 @@ useHead({
   ]
 })
 
-// State untuk mengatur buka/tutup menu dropdown di HP
+// State untuk mengatur buka/tutup menu sidebar di HP
 const isOpen = ref(false)
+const scrollY = ref(0)
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
 }
+
+// Monitor scroll untuk efek navbar
+if (process.client) {
+  window.addEventListener('scroll', () => {
+    scrollY.value = window.scrollY
+  })
+}
+
+// Close menu ketika route berubah
+watch(() => useRoute().path, () => {
+  isOpen.value = false
+})
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-950 font-sans">
+  <div class="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900 font-sans">
     
-    <!-- Navbar Langsung di app.vue (Tidak butuh komponen eksternal) -->
-    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 dark:bg-gray-900/80 dark:border-gray-800 transition-all duration-300">
-      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-
-          <!-- Top Brand -->
-          <NuxtLink to="/" class="flex flex-col justify-center">
-            <span class="font-extrabold text-lg md:text-xl text-gray-900 dark:text-white leading-tight">
-              Arva Athallah Susanto S.EI., M.SEI
-            </span>
-            <small class="text-xs md:text-sm text-emerald-600 dark:text-emerald-400 font-medium">
-              Master of Science in Islamic Economics
-            </small>
+    <!-- Navbar Stylish Modern -->
+    <header class="navbar-container" :class="{ 'navbar-scrolled': scrollY > 10 }">
+      <nav class="navbar-content">
+        <div class="navbar-inner">
+          <!-- Brand Logo & Text -->
+          <NuxtLink to="/" class="navbar-brand">
+            <div class="brand-gradient-box">
+              <span class="brand-icon">A</span>
+            </div>
+            <div class="brand-text">
+              <span class="brand-main">Arva Athallah</span>
+              <span class="brand-sub">M.SEI Islamic Economics</span>
+            </div>
           </NuxtLink>
 
-          <!-- Top Nav Links (Desktop) -->
-          <div class="hidden md:flex space-x-6 items-center">
-            <NuxtLink to="/" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Home</NuxtLink>
-            <NuxtLink to="/portfolio" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Portfolio</NuxtLink>
-            <NuxtLink to="/writings" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Writings</NuxtLink>
-            <NuxtLink to="/contact" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 font-medium transition-colors duration-200">Contact</NuxtLink>
+          <!-- Desktop Navigation Links -->
+          <div class="navbar-links-desktop">
+            <NuxtLink to="/" class="navbar-link">Home</NuxtLink>
+            <NuxtLink to="/portfolio" class="navbar-link">Portfolio</NuxtLink>
+            <NuxtLink to="/writings" class="navbar-link">Writings</NuxtLink>
+            <NuxtLink to="/contact" class="navbar-link">Contact</NuxtLink>
           </div>
 
-          <!-- Tombol Hamburger (Mobile) -->
-          <div class="md:hidden flex items-center">
-            <button @click="toggleMenu" class="text-gray-600 dark:text-gray-300 hover:text-emerald-600 focus:outline-none transition-transform duration-200">
-              <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <!-- Ikon Garis Tiga (Buka) -->
-                <path v-if="!isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                <!-- Ikon X (Tutup) -->
-                <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-              </svg>
-            </button>
-          </div>
-
+          <!-- Hamburger Menu Button (Mobile) -->
+          <button 
+            @click="toggleMenu" 
+            class="navbar-hamburger"
+            :class="{ 'is-open': isOpen }"
+            aria-label="Toggle menu"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
         </div>
       </nav>
 
-      <!-- Dropdown Nav Links (Mobile) -->
+      <!-- Mobile Sidebar Menu -->
       <transition
-        enter-active-class="transition duration-300 ease-out transform"
-        enter-from-class="-translate-y-4 opacity-0"
-        enter-to-class="translate-y-0 opacity-100"
-        leave-active-class="transition duration-200 ease-in transform"
-        leave-from-class="translate-y-0 opacity-100"
-        leave-to-class="-translate-y-4 opacity-0"
+        enter-active-class="transition duration-300 ease-out"
+        enter-from-class="opacity-0 -translate-y-3"
+        enter-to-class="opacity-100 translate-y-0"
+        leave-active-class="transition duration-200 ease-in"
+        leave-from-class="opacity-100 translate-y-0"
+        leave-to-class="opacity-0 -translate-y-3"
       >
-        <div v-show="isOpen" class="md:hidden absolute top-20 left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-xl">
-          <div class="px-4 py-4 space-y-2 flex flex-col">
-            <NuxtLink to="/" @click="isOpen = false" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 hover:text-emerald-600 dark:hover:bg-gray-800 transition-all">Home</NuxtLink>
-            <NuxtLink to="/portfolio" @click="isOpen = false" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 hover:text-emerald-600 dark:hover:bg-gray-800 transition-all">Portfolio</NuxtLink>
-            <NuxtLink to="/writings" @click="isOpen = false" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 hover:text-emerald-600 dark:hover:bg-gray-800 transition-all">Writings</NuxtLink>
-            <NuxtLink to="/contact" @click="isOpen = false" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-emerald-50 hover:text-emerald-600 dark:hover:bg-gray-800 transition-all">Contact</NuxtLink>
+        <div v-show="isOpen" class="navbar-mobile-menu">
+          <div class="mobile-menu-content">
+            <NuxtLink 
+              to="/" 
+              @click="isOpen = false" 
+              class="mobile-menu-link"
+            >
+              <span class="link-dot"></span>
+              Home
+            </NuxtLink>
+            <NuxtLink 
+              to="/portfolio" 
+              @click="isOpen = false" 
+              class="mobile-menu-link"
+            >
+              <span class="link-dot"></span>
+              Portfolio
+            </NuxtLink>
+            <NuxtLink 
+              to="/writings" 
+              @click="isOpen = false" 
+              class="mobile-menu-link"
+            >
+              <span class="link-dot"></span>
+              Writings
+            </NuxtLink>
+            <NuxtLink 
+              to="/contact" 
+              @click="isOpen = false" 
+              class="mobile-menu-link"
+            >
+              <span class="link-dot"></span>
+              Contact
+            </NuxtLink>
           </div>
         </div>
       </transition>
