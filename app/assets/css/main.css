@@ -46,6 +46,21 @@
   transform: translateY(-2px);
 }
 
+.brand-logo-image {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.navbar-brand:hover .brand-logo-image {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+}
+
 .brand-gradient-box {
   width: 44px;
   height: 44px;
@@ -69,11 +84,11 @@
 .brand-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0;
 }
 
 .brand-main {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   color: #0f172a;
   letter-spacing: -0.3px;
@@ -87,6 +102,7 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   line-height: 1;
+  display: none;
 }
 
 /* Desktop Navigation */
