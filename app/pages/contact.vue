@@ -26,7 +26,9 @@ const questions = [
 ]
 
 const activeQuestion = ref<number | null>(0)
-
+function toggleQuestion(index: number) {
+  activeQuestion.value = activeQuestion.value === index ? null : index
+}
 const chatOpen = ref(false)
 const chatInput = ref('')
 const chatLoading = ref(false)
@@ -182,10 +184,13 @@ function submitContact() {
             :key="item.q"
             class="faq-item"
           >
-            <button @click="activeQuestion = activeQuestion === index ? null : index">
-              <span>{{ item.q }}</span>
-              <strong>{{ activeQuestion === index ? '−' : '+' }}</strong>
-            </button>
+            <button
+  type="button"
+  @click="toggleQuestion(index)"
+>
+  <span>{{ item.q }}</span>
+  <strong>{{ activeQuestion === index ? '−' : '+' }}</strong>
+</button>
 
             <p v-if="activeQuestion === index">
               {{ item.a }}
