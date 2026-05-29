@@ -36,8 +36,8 @@
           </p>
 
           <div class="arva-actions">
-            <NuxtLink to="/about" class="arva-btn primary">
-              About Arva
+            <NuxtLink to="/contact" class="arva-btn primary">
+              Contact Arva
             </NuxtLink>
 
             <NuxtLink to="/portfolio" class="arva-btn secondary">
@@ -93,7 +93,7 @@
       <div class="section-two-col">
         <div>
           <p class="arva-kicker">
-            About
+            Contact
           </p>
 
           <h2>
@@ -110,8 +110,8 @@
             tidak lagi menjadi tampilan utama website.
           </p>
 
-          <NuxtLink to="/about" class="arva-text-link">
-            Read more about Arva →
+          <NuxtLink to="/contact" class="arva-text-link">
+            Contact Arva →
           </NuxtLink>
         </div>
       </div>
@@ -143,7 +143,7 @@
             pengembangan diri secara profesional.
           </p>
 
-          <NuxtLink to="/about" class="arva-text-link">
+          <NuxtLink to="/contact" class="arva-text-link">
             Open Profile →
           </NuxtLink>
         </div>

@@ -9,7 +9,7 @@
 
         <div class="top-nav-links">
           <NuxtLink to="/">Home</NuxtLink>
-          <NuxtLink to="/about">About</NuxtLink>
+          <NuxtLink to="/contact">Contact</NuxtLink>
           <NuxtLink to="/portfolio">Portfolio</NuxtLink>
           <NuxtLink to="/writings">Writings</NuxtLink>
           <NuxtLink to="/contact">Contact</NuxtLink>
@@ -42,7 +42,7 @@
           <div class="footer-col">
             <h3>Navigation</h3>
             <NuxtLink to="/">Home</NuxtLink>
-            <NuxtLink to="/about">About</NuxtLink>
+            <NuxtLink to="/contact">Contact</NuxtLink>
             <NuxtLink to="/portfolio">Portfolio</NuxtLink>
             <NuxtLink to="/writings">Writings</NuxtLink>
             <NuxtLink to="/contact">Contact</NuxtLink>
