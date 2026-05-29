@@ -253,14 +253,5 @@
         Contact Arva
       </NuxtLink>
     </section>
-
-    <a
-      href="https://extremeprogamer.blogspot.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="archive-floating-btn"
-    >
-      View Archive
-    </a>
   </main>
 </template>

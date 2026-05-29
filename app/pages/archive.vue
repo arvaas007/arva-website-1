@@ -43,16 +43,6 @@ const { data, pending, error } = await useFetch('/api/blogger-posts')
             month: 'long',
             year: 'numeric'
           }) }}
-        </p>
-
-        <a
-          :href="post.url"
-          target="_blank"
-          class="read-link"
-        >
-          View archive →
-        </a>
-      </article>
-    </section>
+        </p>   
   </main>
 </template>
