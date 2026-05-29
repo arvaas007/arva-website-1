@@ -42,7 +42,7 @@ watch(() => useRoute().path, () => {
         <div class="navbar-inner">
           <!-- Brand Logo & Text -->
           <NuxtLink to="/" class="navbar-brand">
-            <img src="/logo.svg" alt="ARVA-AS Logo" class="brand-logo-image" />
+            <img src="/logo.png" alt="ARVA-AS Logo" class="brand-logo-image" />
             <div class="brand-text">
               <span class="brand-main">ARVA-AS</span>
             </div>
