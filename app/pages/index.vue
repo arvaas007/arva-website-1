@@ -1,3 +1,19 @@
+<script setup lang="ts">
+const isHeroVideoPlaying = ref(false)
+const heroVideoRef = ref<HTMLVideoElement | null>(null)
+
+async function toggleHeroVideo() {
+  if (!heroVideoRef.value) return
+
+  if (heroVideoRef.value.paused) {
+    await heroVideoRef.value.play()
+    isHeroVideoPlaying.value = true
+  } else {
+    heroVideoRef.value.pause()
+    isHeroVideoPlaying.value = false
+  }
+}
+</script>
 <template>
   <main>
     <section class="arva-hero">
@@ -46,22 +62,49 @@
           </div>
         </div>
 
-        <div class="arva-hero-panel">
-          <div class="panel-orbit">
-            <div class="orbit-core">A</div>
-            <span class="orbit-dot dot-a"></span>
-            <span class="orbit-dot dot-b"></span>
-            <span class="orbit-dot dot-c"></span>
-          </div>
+        <div class="arva-hero-panel arva-video-panel">
+  <div class="arva-video-frame">
+    <video
+      ref="heroVideoRef"
+      src="/videos/arva-intro.mp4"
+      class="arva-intro-video"
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      @play="isHeroVideoPlaying = true"
+      @pause="isHeroVideoPlaying = false"
+    />
 
-          <h2>Academic Digital Identity</h2>
+    <div class="arva-video-overlay"></div>
 
-          <p>
-            A curated space for profile building, intellectual growth,
-            portfolio documentation, reflective writings, and academic
-            development.
-          </p>
-        </div>
+    <button
+      type="button"
+      class="arva-video-play"
+      @click="toggleHeroVideo"
+    >
+      <span v-if="!isHeroVideoPlaying">▶</span>
+      <span v-else>Ⅱ</span>
+    </button>
+
+    <div class="arva-video-caption">
+      <p>Arva Academic Profile</p>
+      <span>
+        {{ isHeroVideoPlaying ? 'Playing introduction video' : 'Click to play video' }}
+      </span>
+    </div>
+  </div>
+
+  <div class="arva-video-info">
+    <h2>Academic Digital Identity</h2>
+
+    <p>
+      A curated space for profile building, intellectual growth,
+      portfolio documentation, reflective writings, and academic
+      development.
+    </p>
+  </div>
+</div>
       </div>
     </section>
 
