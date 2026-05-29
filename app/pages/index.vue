@@ -122,18 +122,18 @@ onMounted(() => {
     <section class="number-section">
       <div class="number-grid">
         <div class="number-card">
-          <h3>5</h3>
-          <p>Main academic identity sections</p>
+          <h3>12</h3>
+          <p>Number of Publications in Google Scholars</p>
         </div>
 
         <div class="number-card">
-          <h3>3</h3>
-          <p>Core focus areas: profile, portfolio, and writings</p>
+          <h3>44</h3>
+          <p>H-Index in Google Scholars</p>
         </div>
 
         <div class="number-card">
-          <h3>1</h3>
-          <p>Integrated personal academic platform</p>
+          <h3>7</h3>
+          <p>Global Academic Experiences</p>
         </div>
 
         <div class="number-card">
@@ -151,7 +151,7 @@ onMounted(() => {
           </p>
 
           <h2>
-            From digital archive to academic personal branding.
+            From Indonesia to The World.
           </h2>
         </div>
 
@@ -160,8 +160,6 @@ onMounted(() => {
             Website ini dirancang sebagai ruang akademik personal yang lebih
             matang. Identitas utama diarahkan pada profil, portofolio, tulisan,
             project, dan dokumentasi perkembangan diri Arva Athallah Susanto.
-            Konten lama tetap dapat diakses melalui archive shortcut, tetapi
-            tidak lagi menjadi tampilan utama website.
           </p>
 
           <NuxtLink to="/contact" class="arva-text-link">
