@@ -236,10 +236,11 @@ onMounted(() => {
       <div class="principle-list">
         <div class="principle-item">
           <span>01 —</span>
-          <h3>Academic First</h3>
+          <h3>Academic Integrity</h3>
           <p>
-            Tampilan dan struktur diarahkan untuk membangun kesan intelektual,
-            rapi, kredibel, dan profesional.
+            Menjunjung tinggi standar etika dan impresi intelektual yang kredibel, rapi, dan profesional. 
+            Fokus utama saya adalah menyajikan output riset, analisis kebijakan, dan pemikiran makroekonomi Islam 
+            secara terstruktur demi memberikan kontribusi nyata bagi literatur ilmiah global.
           </p>
         </div>
 
@@ -254,19 +255,21 @@ onMounted(() => {
 
         <div class="principle-item">
           <span>03 —</span>
-          <h3>Portfolio Driven</h3>
+          <h3>Portfolio-Driven Evidence</h3>
           <p>
-            Website diarahkan untuk menampilkan karya, proses belajar, project,
-            dan perkembangan kompetensi.
+            Berorientasi pada pembuktian kompetensi yang berbasis pada karya nyata. Prinsip profesional saya adalah 
+            menunjukkan hasil konkret dari proses belajar dan riset, mulai dari publikasi ilmiah, proyek analisis bibliometrik 
+            dan Systematic Literature Review (SLR), hingga penguasaan teknis dalam tata kelola database dan SQL.
           </p>
         </div>
 
         <div class="principle-item">
           <span>04 —</span>
-          <h3>Scalable System</h3>
+          <h3>Scalable Methodology</h3>
           <p>
-            Blogger tetap menjadi backend konten, sementara Nuxt dan Vercel
-            memberi kebebasan desain dan pengembangan UI/UX.
+            Menerapkan pendekatan riset yang adaptif, sistematis, dan visioner. Saya menggabungkan fondasi teori 
+            ekonomi Islam yang kuat dengan pemanfaatan metodologi modern serta perangkat teknologi data untuk 
+            menghasilkan analisis yang cepat, akurat, dan relevan terhadap dinamika ekonomi masa depan.
           </p>
         </div>
       </div>
