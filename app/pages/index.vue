@@ -13,6 +13,11 @@ async function toggleHeroVideo() {
     isHeroVideoPlaying.value = false
   }
 }
+onMounted(() => {
+  if (heroVideoRef.value && !heroVideoRef.value.paused) {
+    isHeroVideoPlaying.value = true
+  }
+})
 </script>
 <template>
   <main>
@@ -63,11 +68,17 @@ async function toggleHeroVideo() {
         </div>
 
         <div class="arva-hero-panel arva-video-panel">
-  <div class="arva-video-frame">
+  <div
+    class="arva-video-frame"
+    :class="{ 'is-playing': isHeroVideoPlaying }"
+    @click="toggleHeroVideo"
+    style="cursor: pointer;"
+  >
     <video
       ref="heroVideoRef"
       src="/videos/arva-intro.mp4"
       class="arva-intro-video"
+      autoplay
       muted
       loop
       playsinline
@@ -81,7 +92,7 @@ async function toggleHeroVideo() {
     <button
       type="button"
       class="arva-video-play"
-      @click="toggleHeroVideo"
+      @click.stop="toggleHeroVideo"
     >
       <span v-if="!isHeroVideoPlaying">▶</span>
       <span v-else>Ⅱ</span>
