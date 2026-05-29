@@ -13,10 +13,35 @@ async function toggleHeroVideo() {
     isHeroVideoPlaying.value = false
   }
 }
+
 onMounted(() => {
   if (heroVideoRef.value && !heroVideoRef.value.paused) {
     isHeroVideoPlaying.value = true
   }
+
+  // Scroll animation observer
+  const animatedEls = document.querySelectorAll('[data-animate]')
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement
+          el.classList.add('is-visible')
+
+          // Stagger children if present
+          const children = el.querySelectorAll('[data-animate-child]')
+          children.forEach((child, i) => {
+            ;(child as HTMLElement).style.transitionDelay = `${i * 120}ms`
+            child.classList.add('is-visible')
+          })
+
+          observer.unobserve(el)
+        }
+      })
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  )
+  animatedEls.forEach((el) => observer.observe(el))
 })
 </script>
 <template>
@@ -36,7 +61,7 @@ onMounted(() => {
       </div>
 
       <div class="arva-hero-inner">
-        <div class="arva-hero-content">
+        <div class="arva-hero-content" data-animate="fade-up">
           <p class="arva-kicker">
             Personal Academic Website
           </p>
@@ -67,83 +92,83 @@ onMounted(() => {
           </div>
         </div>
 
-        <div class="arva-hero-panel arva-video-panel">
-  <div
-    class="arva-video-frame"
-    :class="{ 'is-playing': isHeroVideoPlaying }"
-    @click="toggleHeroVideo"
-    style="cursor: pointer;"
-  >
-    <video
-      ref="heroVideoRef"
-      src="/videos/arva-intro.mp4"
-      class="arva-intro-video"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      @play="isHeroVideoPlaying = true"
-      @pause="isHeroVideoPlaying = false"
-    />
+        <div class="arva-hero-panel arva-video-panel" data-animate="fade-left">
+          <div
+            class="arva-video-frame"
+            :class="{ 'is-playing': isHeroVideoPlaying }"
+            @click="toggleHeroVideo"
+            style="cursor: pointer;"
+          >
+            <video
+              ref="heroVideoRef"
+              src="/videos/arva-intro.mp4"
+              class="arva-intro-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              @play="isHeroVideoPlaying = true"
+              @pause="isHeroVideoPlaying = false"
+            />
 
-    <div class="arva-video-overlay"></div>
+            <div class="arva-video-overlay"></div>
 
-    <button
-      type="button"
-      class="arva-video-play"
-      @click.stop="toggleHeroVideo"
-    >
-      <span v-if="!isHeroVideoPlaying">▶</span>
-      <span v-else>Ⅱ</span>
-    </button>
+            <button
+              type="button"
+              class="arva-video-play"
+              @click.stop="toggleHeroVideo"
+            >
+              <span v-if="!isHeroVideoPlaying">▶</span>
+              <span v-else>Ⅱ</span>
+            </button>
 
-    <div class="arva-video-caption">
-      <p>Arva Academic Profile</p>
-      <span>
-        {{ isHeroVideoPlaying ? 'Playing introduction video' : 'Click to play video' }}
-      </span>
-    </div>
-  </div>
+            <div class="arva-video-caption">
+              <p>Arva Academic Profile</p>
+              <span>
+                {{ isHeroVideoPlaying ? 'Playing introduction video' : 'Click to play video' }}
+              </span>
+            </div>
+          </div>
 
-  <div class="arva-video-info">
-    <h2>Academic Digital Identity</h2>
+          <div class="arva-video-info">
+            <h2>Academic Digital Identity</h2>
 
-    <p>
-      A curated space for profile building, intellectual growth,
-      portfolio documentation, reflective writings, and academic
-      development.
-    </p>
-  </div>
-</div>
+            <p>
+              A curated space for profile building, intellectual growth,
+              portfolio documentation, reflective writings, and academic
+              development.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="number-section">
+    <section class="number-section" data-animate="fade-up">
       <div class="number-grid">
-        <div class="number-card">
+        <div class="number-card" data-animate-child>
           <h3>5</h3>
           <p>Main academic identity sections</p>
         </div>
 
-        <div class="number-card">
+        <div class="number-card" data-animate-child>
           <h3>3</h3>
           <p>Core focus areas: profile, portfolio, and writings</p>
         </div>
 
-        <div class="number-card">
+        <div class="number-card" data-animate-child>
           <h3>1</h3>
           <p>Integrated personal academic platform</p>
         </div>
 
-        <div class="number-card">
+        <div class="number-card" data-animate-child>
           <h3>∞</h3>
           <p>Continuous learning, growth, and digital development</p>
         </div>
       </div>
     </section>
 
-    <section class="arva-section">
+    <section class="arva-section" data-animate="fade-right">
       <div class="section-two-col">
         <div>
           <p class="arva-kicker">
@@ -172,7 +197,7 @@ onMounted(() => {
     </section>
 
     <section class="arva-section soft-bg">
-      <div class="section-heading-center">
+      <div class="section-heading-center" data-animate="fade-up">
         <p class="arva-kicker">
           Focus Areas
         </p>
@@ -187,8 +212,8 @@ onMounted(() => {
         </p>
       </div>
 
-      <div class="program-grid">
-        <div class="program-card featured">
+      <div class="program-grid" data-animate="stagger">
+        <div class="program-card featured" data-animate-child>
           <span class="program-label">Featured</span>
           <p class="program-number">01</p>
           <h3>Academic Profile</h3>
@@ -202,16 +227,16 @@ onMounted(() => {
           </NuxtLink>
         </div>
 
-        <div class="program-card">
+        <div class="program-card" data-animate-child>
           <p class="program-number">02</p>
-          <h3>Portfolio & Projects</h3>
+          <h3>Portfolio &amp; Projects</h3>
           <p>
             Mendokumentasikan karya, proyek, pengalaman, capaian, dan proses
             belajar sebagai bagian dari personal branding.
           </p>
         </div>
 
-        <div class="program-card">
+        <div class="program-card" data-animate-child>
           <p class="program-number">03</p>
           <h3>Writings</h3>
           <p>
@@ -222,7 +247,7 @@ onMounted(() => {
       </div>
     </section>
 
-    <section class="arva-section">
+    <section class="arva-section" data-animate="fade-up">
       <div class="section-heading-center">
         <p class="arva-kicker">
           Approach
@@ -234,7 +259,7 @@ onMounted(() => {
       </div>
 
       <div class="principle-list">
-        <div class="principle-item">
+        <div class="principle-item" data-animate="fade-up" style="--anim-delay: 0ms">
           <span>01 —</span>
           <h3>Academic First</h3>
           <p>
@@ -243,7 +268,7 @@ onMounted(() => {
           </p>
         </div>
 
-        <div class="principle-item">
+        <div class="principle-item" data-animate="fade-up" style="--anim-delay: 100ms">
           <span>02 —</span>
           <h3>Archive Without Noise</h3>
           <p>
@@ -252,7 +277,7 @@ onMounted(() => {
           </p>
         </div>
 
-        <div class="principle-item">
+        <div class="principle-item" data-animate="fade-up" style="--anim-delay: 200ms">
           <span>03 —</span>
           <h3>Portfolio Driven</h3>
           <p>
@@ -261,7 +286,7 @@ onMounted(() => {
           </p>
         </div>
 
-        <div class="principle-item">
+        <div class="principle-item" data-animate="fade-up" style="--anim-delay: 300ms">
           <span>04 —</span>
           <h3>Scalable System</h3>
           <p>
@@ -272,11 +297,11 @@ onMounted(() => {
       </div>
     </section>
 
-    <section class="quote-section">
+    <section class="quote-section" data-animate="fade-up">
       <div class="quote-box">
         <p>
-          “A personal website is not only a digital profile. It is a structured
-          memory of learning, growth, projects, and identity.”
+          "A personal website is not only a digital profile. It is a structured
+          memory of learning, growth, projects, and identity."
         </p>
 
         <div class="quote-author">
@@ -289,7 +314,7 @@ onMounted(() => {
       </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section" data-animate="scale-in">
       <p class="arva-kicker">
         Connect
       </p>
