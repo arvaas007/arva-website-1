@@ -244,10 +244,9 @@ onMounted(() => {
 
         <div class="principle-item">
           <span>02 —</span>
-          <h3>Archive Without Noise</h3>
+          <h3>Database Research</h3>
           <p>
-            Konten lama tetap dapat diakses, tetapi tidak mengganggu identitas
-            baru sebagai website personal akademik.
+            Website ini dilengkapi dengan database research personal yang terintegrasi
           </p>
         </div>
 

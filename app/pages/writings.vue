@@ -126,15 +126,6 @@ function getExcerpt(content: string) {
               >
                 Read article →
               </NuxtLink>
-
-              <a
-                :href="post.url"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="writing-source"
-              >
-                Blogger source
-              </a>
             </div>
           </article>
         </div>
