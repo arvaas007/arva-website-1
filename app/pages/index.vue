@@ -275,8 +275,8 @@ onMounted(() => {
     <section class="quote-section">
       <div class="quote-box">
         <p>
-          “A personal website is not only a digital profile. It is a structured
-          memory of learning, growth, projects, and identity.”
+          “Jika Roma dan Konstantinopel dahulu ditakhlukkan dengan darah dan air mata. Maka bukan tidak mungkin Jerussalem akan ditakhukkan dengan
+          penguasaan ilmu dan teknologi terbarukan, insyaAllah”
         </p>
 
         <div class="quote-author">

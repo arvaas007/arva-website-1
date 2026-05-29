@@ -20,8 +20,8 @@ const questions = [
     a: 'You can open the Writings page to read selected articles connected from Blogger as the content backend.'
   },
   {
-    q: 'What is the relation with Extreme Pro Gamer?',
-    a: 'Extreme Pro Gamer is preserved as a legacy archive, while this website focuses on Arva’s academic and professional identity.'
+    q: 'What is Arva's Dream?',
+    a: 'Arva's dream is to contribute meaningfully to the field of Islamic Economics and Social Finance through research, teaching, and practical applications.'
   }
 ]
 
