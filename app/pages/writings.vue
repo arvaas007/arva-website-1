@@ -1,66 +1,138 @@
 <script setup lang="ts">
 const { data, pending, error } = await useFetch('/api/blogger-posts')
+
+function getPostPath(url: string) {
+  try {
+    return new URL(url).pathname
+  } catch {
+    return '#'
+  }
+}
+
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  })
+}
+
+function getExcerpt(content: string) {
+  if (!content) return ''
+  const text = content
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+  return text.length > 180 ? text.slice(0, 180) + '...' : text
+}
 </script>
 
 <template>
-  <main class="page">
-    <p class="eyebrow">
-      Writings
-    </p>
+  <main class="writings-page">
+    <section class="writings-hero">
+      <p class="writings-kicker">
+        Academic Writings
+      </p>
 
-    <h1 class="section-title">
-      Latest Writings
-    </h1>
+      <h1>
+        Selected writings, reflections, and digital notes.
+      </h1>
 
-    <p class="section-desc">
-      Kumpulan tulisan yang diambil langsung dari Blogger sebagai backend
-      konten, lalu ditampilkan kembali melalui frontend Nuxt.
-    </p>
+      <p>
+        Halaman ini menampilkan tulisan yang bersumber dari Blogger Extreme Pro
+        Gamer, tetapi disajikan ulang dalam tampilan akademik personal Arva
+        Athallah Susanto.
+      </p>
+    </section>
 
-    <div v-if="pending" class="post-list">
-      Memuat artikel...
-    </div>
+    <section class="writings-layout">
+      <aside class="writings-sidebar">
+        <div class="sidebar-card">
+          <p class="sidebar-label">
+            Content Source
+          </p>
 
-    <div v-else-if="error" class="post-list">
-      Gagal memuat artikel dari Blogger.
-    </div>
+          <h2>Blogger Backend</h2>
 
-    <section v-else class="post-list">
-      <article
-        v-for="post in data?.posts"
-        :key="post.id"
-        class="post-card"
-      >
-        <h2 class="post-title">
-          {{ post.title }}
-        </h2>
-
-        <p class="post-date">
-          {{ new Date(post.published).toLocaleDateString('id-ID', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-          }) }}
-        </p>
-
-        <div class="label-wrap">
-          <span
-            v-for="label in post.labels"
-            :key="label"
-            class="label"
-          >
-            {{ label }}
-          </span>
+          <p>
+            Artikel tetap dikelola melalui Blogger, sedangkan halaman ini
+            menjadi tampilan editorial modern berbasis Nuxt dan Vercel.
+          </p>
         </div>
 
-        <a
-          :href="post.url"
-          target="_blank"
-          class="read-link"
-        >
-          Read on Blogger →
-        </a>
-      </article>
+        <div class="sidebar-card">
+          <p class="sidebar-label">
+            Categories
+          </p>
+
+          <div class="sidebar-tags">
+            <span>Reflection</span>
+            <span>Academic Notes</span>
+            <span>Portfolio</span>
+            <span>Digital Identity</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="writings-content">
+        <div v-if="pending" class="writing-state">
+          Memuat tulisan...
+        </div>
+
+        <div v-else-if="error" class="writing-state error">
+          Gagal memuat tulisan dari Blogger.
+        </div>
+
+        <div v-else class="writing-list">
+          <article
+            v-for="(post, index) in data?.posts"
+            :key="post.id"
+            class="writing-card"
+            :class="{ featured: index === 0 }"
+          >
+            <div class="writing-meta">
+              <span>{{ formatDate(post.published) }}</span>
+              <span v-if="index === 0">Featured</span>
+            </div>
+
+            <h2>
+              {{ post.title }}
+            </h2>
+
+            <p class="writing-excerpt">
+              {{ getExcerpt(post.content) }}
+            </p>
+
+            <div class="writing-labels">
+              <span
+                v-for="label in post.labels?.slice(0, 4)"
+                :key="label"
+              >
+                {{ label }}
+              </span>
+            </div>
+
+            <div class="writing-footer">
+              <NuxtLink
+                :to="getPostPath(post.url)"
+                class="writing-read"
+              >
+                Read article →
+              </NuxtLink>
+
+              <a
+                :href="post.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="writing-source"
+              >
+                Blogger source
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
     </section>
   </main>
 </template>
