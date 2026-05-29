@@ -149,6 +149,7 @@ watch(() => useRoute().path, () => {
             <NuxtLink to="/contact">Contact</NuxtLink>
             <NuxtLink to="/portfolio">Portfolio</NuxtLink>
             <NuxtLink to="/writings">Writings</NuxtLink>
+            <NuxtLink to="/contact">Contact</NuxtLink>
           </div>
         <div class="footer-bottom">
           <p>© 2026 Arva Athallah Susanto. Personal Academic Website.</p>
