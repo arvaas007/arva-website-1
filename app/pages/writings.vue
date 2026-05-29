@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const { data, pending, error } = await useFetch('/api/blogger-posts')
+import { ref } from 'vue'
+
+const locale = ref<'id' | 'en'>('en')
+const { data, pending, error } = await useFetch<{ posts: Array<any> }>('/api/blogger-posts')
 
 function getPostPath(url: string) {
   try {
@@ -10,11 +13,14 @@ function getPostPath(url: string) {
 }
 
 function formatDate(date: string) {
-  return new Date(date).toLocaleDateString('id-ID', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  })
+  return new Date(date).toLocaleDateString(
+    locale.value === 'id' ? 'id-ID' : 'en-US',
+    {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    }
+  )
 }
 
 function getExcerpt(content: string) {
@@ -136,3 +142,4 @@ function getExcerpt(content: string) {
     </section>
   </main>
 </template>
+

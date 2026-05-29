@@ -42,7 +42,7 @@ onMounted(() => {
           </p>
 
           <h1 class="arva-hero-title">
-            Arva Athallah Susanto
+            Arva Athallah Susanto S.EI., M.SEI
           </h1>
 
           <p class="arva-hero-subtitle">
@@ -282,7 +282,7 @@ onMounted(() => {
         <div class="quote-author">
           <div class="quote-avatar">A</div>
           <div>
-            <strong>Arva Athallah Susanto</strong>
+            <strong>Arva Athallah Susanto S.EI., M.SEI</strong>
             <span>Personal Academic Website</span>
           </div>
         </div>

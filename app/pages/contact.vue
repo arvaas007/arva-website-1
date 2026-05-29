@@ -109,7 +109,7 @@ function submitContact() {
       <aside class="contact-profile-card">
         <div class="contact-avatar">A</div>
 
-        <h2>Arva Athallah Susanto</h2>
+        <h2>Arva Athallah Susanto S.EI., M.SEI</h2>
 
         <p>
           Research Consultant · Islamic Economics · Islamic Social Finance ·
