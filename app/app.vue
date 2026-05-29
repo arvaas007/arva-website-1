@@ -149,7 +149,6 @@ watch(() => useRoute().path, () => {
             <NuxtLink to="/contact">Contact</NuxtLink>
             <NuxtLink to="/portfolio">Portfolio</NuxtLink>
             <NuxtLink to="/writings">Writings</NuxtLink>
-            <NuxtLink to="/contact">Contact</NuxtLink>
           </div>
 
           <div class="footer-col">
@@ -160,7 +159,7 @@ watch(() => useRoute().path, () => {
           </div>
 
           <div class="footer-col">
-            <h3>Contact</h3>
+            <h3>Address</h3>
             Sidoarjo, East Java, Indonesia<br />
           </div>
         </div>
