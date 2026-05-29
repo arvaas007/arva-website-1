@@ -8,12 +8,12 @@
         </NuxtLink>
 
         <div class="top-nav-links">
-          <NuxtLink to="/">Home</NuxtLink>
-          <NuxtLink to="/contact">Contact</NuxtLink>
-          <NuxtLink to="/portfolio">Portfolio</NuxtLink>
-          <NuxtLink to="/writings">Writings</NuxtLink>
-          <NuxtLink to="/contact">Contact</NuxtLink>
-        </div>
+  <NuxtLink to="/">Home</NuxtLink>
+  <NuxtLink to="/about">About</NuxtLink>
+  <NuxtLink to="/portfolio">Portfolio</NuxtLink>
+  <NuxtLink to="/writings">Writings</NuxtLink>
+  <NuxtLink to="/contact">Contact</NuxtLink>
+</div>
       </nav>
     </header>
 
