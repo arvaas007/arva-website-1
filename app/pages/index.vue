@@ -38,7 +38,7 @@ onMounted(() => {
       <div class="arva-hero-inner">
         <div class="arva-hero-content">
           <p class="arva-kicker">
-            Personal Academic Website
+            Researcher, Analyst, Academia
           </p>
 
           <h1 class="arva-hero-title">
@@ -50,10 +50,7 @@ onMounted(() => {
           </p>
 
           <p class="arva-hero-desc">
-            A personal academic platform documenting learning journeys,
-            selected works, writings, projects, digital transformation, and the
-            evolution from a digital content archive into a focused academic and
-            professional identity.
+            A pathway towards Indonesia Emas 2045, a personal academic website for profile building, intellectual growth, portfolio documentation, reflective writings, and academic development.
           </p>
 
           <div class="arva-actions">
@@ -283,7 +280,7 @@ onMounted(() => {
           <div class="quote-avatar">A</div>
           <div>
             <strong>Arva Athallah Susanto S.EI., M.SEI</strong>
-            <span>Personal Academic Website</span>
+            <span>A legacy that ecoes in eternity</span>
           </div>
         </div>
       </div>
