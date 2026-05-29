@@ -150,28 +150,13 @@ watch(() => useRoute().path, () => {
             <NuxtLink to="/portfolio">Portfolio</NuxtLink>
             <NuxtLink to="/writings">Writings</NuxtLink>
           </div>
-
-          <div class="footer-col">
-            <h3>Academic Resources</h3>
-            <NuxtLink to="/portfolio">Portfolio</NuxtLink>
-            <NuxtLink to="/writings">Selected Writings</NuxtLink>
-          </div>
-
-          <div class="footer-col">
-            <h3>Contact</h3>
-            <p>Email: add-your-email@email.com</p>
-            <p>Instagram: add-your-instagram</p>
-            <p>LinkedIn: add-your-linkedin</p>
-          </div>
-        </div>
-
         <div class="footer-bottom">
           <p>© 2026 Arva Athallah Susanto. Personal Academic Website.</p>
 
           <div class="footer-socials">
-            <a href="#">IG</a>
-            <a href="#">IN</a>
-            <a href="#">MAIL</a>
+            <a href="https://www.instagram.com/arva_as" target="_blank" rel="noopener noreferrer">IG</a>
+            <a href="https://www.linkedin.com/in/arva-athallah-susanto" target="_blank" rel="noopener noreferrer">IN</a>
+            <a href="mailto:arva.susanto@cisf.com">MAIL</a>
           </div>
         </div>
       </div>
