@@ -148,7 +148,7 @@ watch(() => useRoute().path, () => {
             <h3>Profile</h3>
             <p>
               A personal academic website for profile, portfolio, writings,
-              projects, and digital identity development.
+              and projects development.
             </p>
           </div>
 
@@ -174,7 +174,7 @@ watch(() => useRoute().path, () => {
         </div>
 
         <div class="footer-bottom">
-          <p>© 2026 Arva Athallah Susanto. Personal Academic Website.</p>
+          <p>© 2026 Arva Athallah Susanto.</p>
 
           <div class="footer-socials">
             <a href="https://www.instagram.com/arva_as" target="_blank" rel="noopener noreferrer">IG</a>
