@@ -195,9 +195,9 @@ onMounted(() => {
             pengembangan diri secara profesional.
           </p>
 
-          <NuxtLink to="/contact" class="arva-text-link">
-            Open Profile →
-          </NuxtLink>
+          <NuxtLink to="/hall-of-fame" class="arva-text-link">
+  Hall of Fame →
+</NuxtLink>
         </div>
 
         <div class="program-card">
