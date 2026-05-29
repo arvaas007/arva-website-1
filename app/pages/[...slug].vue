@@ -70,15 +70,10 @@ useHead(() => ({
         >
           {{ label }}
         </span>
-      </div>
+     </div>
 
       <div class="article-content" v-html="post.content" />
 
-      <div class="article-source">
-        <a :href="post.url" target="_blank" rel="noopener noreferrer">
-          View original post on Blogger →
-        </a>
-      </div>
     </article>
   </main>
 </template>
