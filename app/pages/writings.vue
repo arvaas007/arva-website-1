@@ -76,7 +76,7 @@ function getExcerpt(content: string) {
             <span>Reflection</span>
             <span>Academic Notes</span>
             <span>Portfolio</span>
-            <span>Digital Identity</span>
+            <span>Database of Research</span>
           </div>
         </div>
       </aside>

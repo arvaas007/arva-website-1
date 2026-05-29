@@ -46,7 +46,7 @@ onMounted(() => {
           </h1>
 
           <p class="arva-hero-subtitle">
-            Academic Portfolio · Digital Identity · Personal Branding
+            Academic Portfolio and Research Database
           </p>
 
           <p class="arva-hero-desc">
@@ -107,7 +107,7 @@ onMounted(() => {
   </div>
 
   <div class="arva-video-info">
-    <h2>Academic Digital Identity</h2>
+    <h2>Academic Journey</h2>
 
     <p>
       A curated space for profile building, intellectual growth,
@@ -275,8 +275,8 @@ onMounted(() => {
     <section class="quote-section">
       <div class="quote-box">
         <p>
-          “Jika Roma dan Konstantinopel dahulu ditakhlukkan dengan darah dan air mata. Maka bukan tidak mungkin Jerussalem akan ditakhukkan dengan
-          penguasaan ilmu dan teknologi terbarukan, insyaAllah”
+          “Jika Roma dan Konstantinopel dahulu ditakhlukkan dengan darah dan air mata. Maka bukan tidak mungkin dalam menyongsong kemerdekaan Palestina adalah dengan
+          penguasaan ilmu dan teknologi terbarukan oleh kaum muslimin, insyaAllah”
         </p>
 
         <div class="quote-author">
