@@ -9,7 +9,6 @@
 
         <div class="top-nav-links">
   <NuxtLink to="/">Home</NuxtLink>
-  <NuxtLink to="/about">About</NuxtLink>
   <NuxtLink to="/portfolio">Portfolio</NuxtLink>
   <NuxtLink to="/writings">Writings</NuxtLink>
   <NuxtLink to="/contact">Contact</NuxtLink>
@@ -52,13 +51,7 @@
             <h3>Academic Resources</h3>
             <NuxtLink to="/portfolio">Portfolio</NuxtLink>
             <NuxtLink to="/writings">Selected Writings</NuxtLink>
-            <a
-              href="https://extremeprogamer.blogspot.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Legacy Archive
-            </a>
+      
           </div>
 
           <div class="footer-col">
