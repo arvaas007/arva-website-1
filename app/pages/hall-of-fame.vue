@@ -70,16 +70,16 @@ export default {
   data() {
     return {
       currentFilter: 'Semua',
-      categories: ['Semua', 'S1', 'S2', 'Luar Negeri'],
+      categories: ['Semua', 'S2', 'S1', 'Luar Negeri'],
       // Struktur Data yang diadaptasi penuh dari Feed Instagram Anda
       achievements: [
         {
-          title: "Momen Wisuda Kelulusan Strata 1 (S1)",
+          title: "Momen Wisuda Kelulusan Magister (S2)",
           date: "Juni 2024",
-          tag: "S1",
+          tag: "S2",
           image: "/images/wisuda-s1.jpg", // Simpan foto wisuda Anda di folder public/images/wisuda-s1.jpg
           paragraphs: [
-            "Tuntas sudah satu babak perjalanan awal. Menyelesaikan studi Strata 1 bukan sekadar tentang selembar ijazah atau pemindahan tali toga, melainkan sebuah pembuktian konsistensi, kerja keras, dan komitmen terhadap ilmu pengetahuan yang telah ditekuni selama ini.",
+            "Tuntas sudah satu babak perjalanan awal. Menyelesaikan studi Strata 2 bukan sekadar tentang selembar ijazah atau pemindahan tali toga, melainkan sebuah pembuktian konsistensi, kerja keras, dan komitmen terhadap ilmu pengetahuan yang telah ditekuni selama ini.",
             "Setiap tantangan ruang kelas, diskusi kelompok, hingga malam-malam panjang menyelesaikan tugas akhir bermuara pada hari ini. Terima kasih yang tak terhingga kepada orang tua, dosen pembimbing, serta rekan-rekan perjuangan yang selalu menguatkan di kala langkah terasa berat.",
             "Ini bukan akhir dari pencarian ilmu, melainkan gerbang awal untuk melangkah lebih jauh, berdampak lebih luas, dan bersiap menyambut tantangan akademik berikutnya di jenjang yang lebih tinggi."
           ],
