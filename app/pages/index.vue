@@ -304,9 +304,9 @@ onMounted(() => {
         connect for future academic and creative collaboration.
       </p>
 
-      <NuxtLink to="/contact" class="arva-btn primary">
-        Contact Arva
-      </NuxtLink>
+      <a href="https://www.linkedin.com/in/arva-athallah-susanto/" target="_blank" rel="noopener noreferrer" class="arva-btn primary">
+  Connect with Arva on LinkedIn
+</a>
     </section>
   </main>
 </template>
