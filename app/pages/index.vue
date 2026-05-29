@@ -162,9 +162,9 @@ onMounted(() => {
             project, dan dokumentasi perkembangan diri Arva Athallah Susanto.
           </p>
 
-          <NuxtLink to="/contact" class="arva-text-link">
-            Contact Arva →
-          </NuxtLink>
+          <a href="https://www.instagram.com/arva_as" target="_blank" rel="noopener noreferrer" class="arva-text-link">
+  Follow me on Instagram →
+</a>
         </div>
       </div>
     </section>
@@ -304,7 +304,7 @@ onMounted(() => {
         connect for future academic and creative collaboration.
       </p>
 
-      <a href="https://www.linkedin.com/in/arva-athallah-susanto/" target="_blank" rel="noopener noreferrer" class="arva-btn primary">
+      <a href="https://www.linkedin.com/in/arva-athallah-s/" target="_blank" rel="noopener noreferrer" class="arva-btn primary">
   Connect with Arva on LinkedIn
 </a>
     </section>
