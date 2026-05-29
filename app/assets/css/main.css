@@ -2388,12 +2388,17 @@ body {
 .arva-intro-video {
   width: 100% !important;
   height: 100% !important;
+  display: block !important;
   object-fit: cover !important;
   object-position: center center !important;
 
-  /* crop black margin bawaan video */
-  transform: scale(1.22) !important;
+  /* scale jangan terlalu besar agar video tetap jernih */
+  transform: scale(1.08) !important;
   transform-origin: center center !important;
+
+  filter: contrast(1.04) saturate(1.06) brightness(1.03) !important;
+  backface-visibility: hidden !important;
+  will-change: transform !important;
 }
 
 .arva-video-caption {
@@ -2418,9 +2423,13 @@ body {
   }
 
   .arva-video-frame {
-    min-height: auto !important;
-    aspect-ratio: 16 / 9 !important;
-  }
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  min-height: 428px !important;
+  border-radius: 26px !important;
+  overflow: hidden !important;
+  background: #020617 !important;
+}
 
   .arva-intro-video {
     transform: scale(1.18) !important;
