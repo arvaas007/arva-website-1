@@ -154,8 +154,9 @@ watch(() => useRoute().path, () => {
 
           <div class="footer-col">
             <h3>Academic Resources</h3>
-            <NuxtLink to="/portfolio">Portfolio</NuxtLink>
-            <NuxtLink to="/writings">Selected Writings</NuxtLink>
+            <a href="https://scholar.google.com/citations?user=7gI4mGYAAAAJ&hl=id" target="_blank">
+              Google Scholar
+            </a>
           </div>
 
           <div class="footer-col">
