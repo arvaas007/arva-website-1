@@ -1,33 +1,18 @@
 <script setup lang="ts">
-const isHeroVideoPlaying = ref(true)
+const isHeroVideoPlaying = ref(false)
 const heroVideoRef = ref<HTMLVideoElement | null>(null)
-
-async function playHeroVideo() {
-  if (!heroVideoRef.value) return
-
-  try {
-    heroVideoRef.value.muted = true
-    await heroVideoRef.value.play()
-    isHeroVideoPlaying.value = true
-  } catch (error) {
-    isHeroVideoPlaying.value = false
-  }
-}
 
 async function toggleHeroVideo() {
   if (!heroVideoRef.value) return
 
   if (heroVideoRef.value.paused) {
-    await playHeroVideo()
+    await heroVideoRef.value.play()
+    isHeroVideoPlaying.value = true
   } else {
     heroVideoRef.value.pause()
     isHeroVideoPlaying.value = false
   }
 }
-
-onMounted(() => {
-  playHeroVideo()
-})
 </script>
 <template>
   <main>
@@ -78,19 +63,19 @@ onMounted(() => {
         </div>
 
         <div class="arva-hero-panel arva-video-panel">
-  <video
-  ref="heroVideoRef"
-  src="/videos/arva-intro.mp4"
-  class="arva-intro-video"
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="auto"
-  @canplay="playHeroVideo"
-  @play="isHeroVideoPlaying = true"
-  @pause="isHeroVideoPlaying = false"
-/>
+  <div class="arva-video-frame">
+    <video
+      ref="heroVideoRef"
+      src="/videos/arva-intro.mp4"
+      class="arva-intro-video"
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      @play="isHeroVideoPlaying = true"
+      @pause="isHeroVideoPlaying = false"
+    />
+
     <div class="arva-video-overlay"></div>
 
     <button
