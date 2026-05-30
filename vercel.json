@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/slr",
+      "destination": "https://slr-engine.vercel.app/slr"
+    },
+    {
+      "source": "/slr/:path*",
+      "destination": "https://slr-engine.vercel.app/slr/:path*"
+    }
+  ]
+}
