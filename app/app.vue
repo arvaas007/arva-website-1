@@ -56,6 +56,7 @@ watch(() => useRoute().path, () => {
             <NuxtLink to="/contact" class="navbar-link">Contact</NuxtLink>
             <NuxtLink to="/hall-of-fame" class="navbar-link">Hall of Fame</NuxtLink>
             <NuxtLink to="/slr" class="navbar-link">Systematic Literature Review</NuxtLink>
+            <NuxtLink to="/arverse" class="navbar-link">Arverse</NuxtLink>
           </div>
 
           <!-- Hamburger Menu Button (Mobile) -->
@@ -82,49 +83,74 @@ watch(() => useRoute().path, () => {
         leave-to-class="opacity-0 -translate-y-3"
       >
         <div v-show="isOpen" class="navbar-mobile-menu">
-          <div class="mobile-menu-content">
-            <NuxtLink 
-              to="/" 
-              @click="isOpen = false" 
-              class="mobile-menu-link"
-            >
-              <span class="link-dot"></span>
-              Home
-            </NuxtLink>
-            <NuxtLink 
-              to="/portfolio" 
-              @click="isOpen = false" 
-              class="mobile-menu-link"
-            >
-              <span class="link-dot"></span>
-              Portfolio
-            </NuxtLink>
-            <NuxtLink 
-              to="/writings" 
-              @click="isOpen = false" 
-              class="mobile-menu-link"
-            >
-              <span class="link-dot"></span>
-              Writings
-            </NuxtLink>
-            <NuxtLink 
-              to="/contact" 
-              @click="isOpen = false" 
-              class="mobile-menu-link"
-            >
-              <span class="link-dot"></span>
-              Contact
-            </NuxtLink>
-            <NuxtLink 
-              to="/hall-of-fame" 
-              @click="isOpen = false" 
-              class="mobile-menu-link"
-            >
-              <span class="link-dot"></span>
-              Hall of Fame
-            </NuxtLink>
-          </div>
-        </div>
+  <div class="mobile-menu-content">
+    <NuxtLink 
+      to="/" 
+      @click="isOpen = false" 
+      class="mobile-menu-link"
+    >
+      <span class="link-dot"></span>
+      Home
+    </NuxtLink>
+
+    <NuxtLink 
+      to="/portfolio" 
+      @click="isOpen = false" 
+      class="mobile-menu-link"
+    >
+      <span class="link-dot"></span>
+      Portfolio
+    </NuxtLink>
+
+    <NuxtLink 
+      to="/writings" 
+      @click="isOpen = false" 
+      class="mobile-menu-link"
+    >
+      <span class="link-dot"></span>
+      Writings
+    </NuxtLink>
+
+    <NuxtLink 
+      to="/contact" 
+      @click="isOpen = false" 
+      class="mobile-menu-link"
+    >
+      <span class="link-dot"></span>
+      Contact
+    </NuxtLink>
+
+    <!-- FIX 1: Menutup tag Hall of Fame secara mandiri dan benar -->
+    <NuxtLink 
+      to="/hall-of-fame" 
+      @click="isOpen = false" 
+      class="mobile-menu-link"
+    >
+      <span class="link-dot"></span>
+      Hall of Fame
+    </NuxtLink>
+
+    <!-- FIX 2: Jalur mandiri terpisah untuk Systematic Literature Review -->
+    <NuxtLink 
+      to="/slr" 
+      @click="isOpen = false" 
+      class="mobile-menu-link"
+    >
+      <span class="link-dot"></span>
+      Systematic Literature Review
+    </NuxtLink>
+
+    <NuxtLink 
+      to="/arverse" 
+      @click="isOpen = false" 
+      class="mobile-menu-link"
+    >
+      <span class="link-dot"></span>
+      Arverse
+    </NuxtLink>
+  </div>
+</div>
+<!-- FIX 3: Dihapus </transition> jika di atas memang tidak memakai pembuka <transition> -->
       </transition>
     </header>
 
