@@ -6,7 +6,7 @@
     },
     {
       "source": "/slr/:path*",
-      "destination": "arva-slr.vercel.app/slr/:path*"
+      "destination": "https://arva-slr.vercel.app/slr/"
     }
   ]
 }
