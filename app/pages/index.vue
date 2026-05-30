@@ -151,7 +151,6 @@ onMounted(() => {
             From Indonesia to The World.
           </h2>
         </div>
-
         <div>
           <p>
             Website ini dirancang sebagai ruang akademik personal yang lebih
@@ -181,7 +180,6 @@ onMounted(() => {
           rapi, profesional, akademik, dan mudah dikembangkan.
         </p>
       </div>
-
       <div class="program-grid">
         <div class="program-card featured">
           <span class="program-label">Featured</span>
@@ -215,6 +213,95 @@ onMounted(() => {
           </p>
         </div>
       </div>
+      <section class="web3-motion-break">
+  <div class="web3-grid"></div>
+
+  <div class="web3-orb orb-1"></div>
+  <div class="web3-orb orb-2"></div>
+  <div class="web3-orb orb-3"></div>
+
+  <div class="web3-node node-a"></div>
+  <div class="web3-node node-b"></div>
+  <div class="web3-node node-c"></div>
+  <div class="web3-node node-d"></div>
+  <div class="web3-node node-e"></div>
+
+  <div class="web3-line line-a"></div>
+  <div class="web3-line line-b"></div>
+  <div class="web3-line line-c"></div>
+  <div class="web3-line line-d"></div>
+
+  <div class="web3-floating-card card-a">
+    <span>Islamic Values</span>
+    <strong>Aim to liberate Palestine</strong>
+  </div>
+
+  <div class="web3-floating-card card-b">
+    <span>Moderate Values</span>
+    <strong>Becaming Moslem without lose modernity</strong>
+  </div>
+
+  <div class="web3-floating-card card-c">
+    <span>Academic Oriented</span>
+    <strong>Long-life learner</strong>
+  </div>
+</section>
+<section class="arva-section app-access-section">
+  <div class="section-heading-center">
+    <p class="arva-kicker">
+      Digital Applications
+    </p>
+
+    <h2>
+      Access Arva’s academic digital tools.
+    </h2>
+
+    <p>
+      Website ini tidak hanya berfungsi sebagai profil akademik, tetapi juga
+      menyediakan akses menuju aplikasi pendukung untuk eksplorasi identitas
+      digital, riset, dan pengembangan kajian ilmiah buatan Arva Athallah Susanto.
+    </p>
+  </div>
+
+  <div class="program-grid app-access-grid">
+    <div class="program-card featured app-card">
+      <span class="program-label">Application</span>
+
+      <p class="program-number">01</p>
+
+      <h3>Arverse</h3>
+
+      <p>
+        Arverse merupakan ruang digital interaktif yang dikembangkan untuk
+        menampilkan identitas, eksplorasi akademik, pengalaman visual, dan
+        pengembangan personal branding Arva dalam format yang lebih modern.
+      </p>
+
+      <NuxtLink to="/arverse" class="arva-text-link">
+        Open Arverse →
+      </NuxtLink>
+    </div>
+
+    <div class="program-card app-card">
+      <span class="program-label">Research Tool</span>
+
+      <p class="program-number">02</p>
+
+      <h3>SLR Application</h3>
+
+      <p>
+        SLR Application dirancang sebagai fitur pendukung untuk membantu proses
+        pencarian, pengelolaan, dan dokumentasi artikel ilmiah dalam kajian
+        Systematic Literature Review secara lebih terstruktur.
+      </p>
+
+      <NuxtLink to="/slr" class="arva-text-link">
+        Open SLR App →
+      </NuxtLink>
+    </div>
+  </div>
+</section>
+      
     </section>
 
     <section class="arva-section">
