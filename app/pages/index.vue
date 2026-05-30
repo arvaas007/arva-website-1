@@ -34,7 +34,6 @@ onMounted(() => {
         <span class="line l3"></span>
         <span class="line l4"></span>
       </div>
-
       <div class="arva-hero-inner">
         <div class="arva-hero-content">
           <p class="arva-kicker">
@@ -272,9 +271,9 @@ onMounted(() => {
       <h3>Arverse</h3>
 
       <p>
-        Arverse merupakan ruang digital interaktif yang dikembangkan untuk
-        menampilkan identitas, eksplorasi akademik, pengalaman visual, dan
-        pengembangan personal branding Arva dalam format yang lebih modern.
+        Arverse merupakan aplikasi Qur'an digital yang berfungsi untuk setor murojaah harian
+        dengan fitur gamifikasi berupa kartu yang dipilih secara acak dan menampilkan ayat
+        tujuan.
       </p>
 
       <NuxtLink to="/arverse" class="arva-text-link">
@@ -355,22 +354,124 @@ onMounted(() => {
         </div>
       </div>
     </section>
+<section class="podcast-showcase">
+  <div class="podcast-glow glow-one"></div>
+  <div class="podcast-glow glow-two"></div>
 
-    <section class="quote-section">
-      <div class="quote-box">
-        <p>
-          “Jika Roma dan Konstantinopel dahulu ditakhlukkan dengan darah dan air mata. Maka bukan tidak mungkin dalam menyongsong kemerdekaan Palestina adalah dengan
-          penguasaan ilmu dan teknologi terbarukan oleh kaum muslimin, insyaAllah”
-        </p>
+  <div class="podcast-inner">
+    <div class="podcast-heading">
+      <p class="arva-kicker">
+        Media Appearance
+      </p>
 
-        <div class="quote-author">
-          <div class="quote-avatar">A</div>
-          <div>
-            <strong>Arva Athallah Susanto S.EI., M.SEI</strong>
-            <span>A legacy that ecoes in eternity</span>
-          </div>
-        </div>
-      </div>
+      <h2>
+        Arva's Podcast.
+      </h2>
+
+      <p>
+        Dokumentasi ini menampilkan keberanian Arva dalam menyampaikan gagasan,
+        berdiskusi, dan membangun identitas akademik di ruang digital publik.
+        Podcast menjadi media untuk memperlihatkan kemampuan komunikasi,
+        pemikiran kritis, dan personal branding yang lebih hidup.
+      </p>
+    </div>
+
+    <div class="podcast-menu-grid">
+  <a
+    href="https://www.youtube.com/watch?v=T6uLNdJ0b5U&t=989s"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="podcast-menu-card podcast-video-card main-podcast"
+  >
+    <iframe
+      class="podcast-bg-video"
+      src="https://www.youtube.com/embed/T6uLNdJ0b5U?start=989&autoplay=1&mute=1&loop=1&playlist=T6uLNdJ0b5U&controls=0&modestbranding=1&rel=0&playsinline=1"
+      title="Arva Podcast 01"
+      frameborder="0"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+
+    <div class="podcast-video-overlay"></div>
+
+    <div class="podcast-card-top">
+      <span class="podcast-badge">Podcast 01</span>
+      <span class="podcast-play">▶</span>
+    </div>
+
+    <div class="podcast-card-content">
+      <h3>Arva Talks: Public Voice & Academic Confidence</h3>
+
+      <p>
+       Arva adalah sosok yang selalu aktif dalam diskusi publik, terutama di ranah akademik dan ekonomi Islam.
+      </p>
+    </div>
+
+    <div class="podcast-card-footer">
+      <span>Watch on YouTube</span>
+      <strong>Open Episode →</strong>
+    </div>
+  </a>
+
+  <a
+    href="https://www.youtube.com/watch?v=cfPt7QD2ghA"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="podcast-menu-card podcast-video-card second-podcast"
+  >
+    <iframe
+      class="podcast-bg-video"
+      src="https://www.youtube.com/embed/cfPt7QD2ghA?autoplay=1&mute=1&loop=1&playlist=cfPt7QD2ghA&controls=0&modestbranding=1&rel=0&playsinline=1"
+      title="Arva Podcast 02"
+      frameborder="0"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+
+    <div class="podcast-video-overlay"></div>
+
+    <div class="podcast-card-top">
+      <span class="podcast-badge">Podcast 02</span>
+      <span class="podcast-play">▶</span>
+    </div>
+
+    <div class="podcast-card-content">
+      <h3>Arva Perspective: Ideas, Identity, and Growth</h3>
+
+      <p>
+        Sebagai moderator Podcast bersama Wakil Rektor Institut Teknologi Sepuluh Nopember, Surabaya.
+      </p>
+    </div>
+
+    <div class="podcast-card-footer">
+      <span>Watch on YouTube</span>
+      <strong>Open Episode →</strong>
+    </div>
+  </a>
+</div>
+</div>
+</section>
+<section class="quote-highlight-section">
+  <div class="quote-highlight-bg"></div>
+
+  <div class="quote-highlight-inner">
+    <p class="quote-highlight-kicker">
+      Personal Manifesto
+    </p>
+
+    <h2>
+      “Jika Roma dan Konstantinopel dahulu ditaklukkan dengan darah dan air mata,
+      maka bukan tidak mungkin dalam menyongsong kemerdekaan Palestina adalah
+      dengan penguasaan ilmu dan teknologi terbarukan oleh kaum muslimin,
+      insyaAllah.”
+    </h2>
+
+    <div class="quote-highlight-author">
+      <span></span>
+      <p>Arva Athallah Susanto S.EI., M.SEI</p>
+    </div>
+  </div>
+
     </section>
 
     <section class="cta-section">

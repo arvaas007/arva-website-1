@@ -130,24 +130,7 @@ watch(() => useRoute().path, () => {
       Hall of Fame
     </NuxtLink>
 
-    <!-- FIX 2: Jalur mandiri terpisah untuk Systematic Literature Review -->
-    <NuxtLink 
-      to="/slr" 
-      @click="isOpen = false" 
-      class="mobile-menu-link"
-    >
-      <span class="link-dot"></span>
-      Systematic Literature Review
-    </NuxtLink>
-
-    <NuxtLink 
-      to="/arverse" 
-      @click="isOpen = false" 
-      class="mobile-menu-link"
-    >
-      <span class="link-dot"></span>
-      Arverse
-    </NuxtLink>
+    
   </div>
 </div>
 <!-- FIX 3: Dihapus </transition> jika di atas memang tidak memakai pembuka <transition> -->
