@@ -5,11 +5,15 @@ const path = '/' + (Array.isArray(route.params.slug)
   ? route.params.slug.join('/')
   : route.params.slug)
 
-const { data: post, pending, error } = await useFetch('/api/blogger-path', {
+import { computed } from 'vue'
+
+const { data: post, pending, error } = await useFetch<{ title: string; published: string; labels: string[]; content: string }>('/api/blogger-path', {
   query: {
     path
   }
 })
+
+const postData = computed(() => post.value ?? { title: '', published: '', labels: [] as string[], content: '' })
 
 useHead(() => ({
   title: post.value?.title
@@ -50,12 +54,12 @@ useHead(() => ({
         Blogger Archive
       </p>
 
-      <h1 class="article-title">
-        {{ post.title }}
-      </h1>
+          <h1 class="article-title">
+            {{ postData.title }}
+          </h1>
 
       <p class="article-date">
-        {{ new Date(post.published).toLocaleDateString('id-ID', {
+        {{ new Date(postData.published).toLocaleDateString('id-ID', {
           day: 'numeric',
           month: 'long',
           year: 'numeric'
@@ -64,7 +68,7 @@ useHead(() => ({
 
       <div class="label-wrap">
         <span
-          v-for="label in post.labels"
+          v-for="label in postData.labels"
           :key="label"
           class="label"
         >
@@ -72,7 +76,7 @@ useHead(() => ({
         </span>
      </div>
 
-      <div class="article-content" v-html="post.content" />
+      <div class="article-content" v-html="postData.content" />
 
     </article>
   </main>

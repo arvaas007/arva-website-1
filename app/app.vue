@@ -21,7 +21,7 @@ const toggleMenu = () => {
 }
 
 // Monitor scroll untuk efek navbar
-if (process.client) {
+if (typeof window !== 'undefined') {
   window.addEventListener('scroll', () => {
     scrollY.value = window.scrollY
   })
@@ -55,6 +55,7 @@ watch(() => useRoute().path, () => {
             <NuxtLink to="/writings" class="navbar-link">Writings</NuxtLink>
             <NuxtLink to="/contact" class="navbar-link">Contact</NuxtLink>
             <NuxtLink to="/hall-of-fame" class="navbar-link">Hall of Fame</NuxtLink>
+            <NuxtLink to="/slr" class="navbar-link">Systematic Literature Review</NuxtLink>
           </div>
 
           <!-- Hamburger Menu Button (Mobile) -->
