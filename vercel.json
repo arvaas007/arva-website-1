@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/slr",
-      "destination": "https://slr-engine.vercel.app/slr"
+      "destination": "https://slr-engine-git-master-smart-kasihs-projects.vercel.app/slr/"
     },
     {
       "source": "/slr/:path*",
-      "destination": "https://slr-engine.vercel.app/slr/:path*"
+      "destination": "https://slr-engine-git-master-smart-kasihs-projects.vercel.app/slr/:path*"
     }
   ]
 }
