@@ -9,6 +9,16 @@
       "source": "/slr/:path*",
       "destination": "https://arva-slr.vercel.app/slr/:path*",
       "permanent": true
+    },
+    {
+      "source": "/arverse",
+      "destination": "https://arverse.vercel.app/",
+      "permanent": true
+    },
+    {
+      "source": "/arverse/:path*",
+      "destination": "https://arverse.vercel.app/:path*",
+      "permanent": true
     }
   ]
 }
