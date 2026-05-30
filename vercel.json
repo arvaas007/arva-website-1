@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/slr",
-      "destination": "arva-slr.vercel.app/slr/"
+      "destination": "https://arva-slr.vercel.app/slr/"
     },
     {
       "source": "/slr/:path*",
