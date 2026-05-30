@@ -1,12 +1,14 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/slr",
-      "destination": "https://arva-slr.vercel.app/slr"
+      "destination": "https://arva-slr.vercel.app/slr/",
+      "permanent": true
     },
     {
       "source": "/slr/:path*",
-      "destination": "https://arva-slr.vercel.app/slr/:path*"
+      "destination": "https://arva-slr.vercel.app/slr/:path*",
+      "permanent": true
     }
   ]
 }
