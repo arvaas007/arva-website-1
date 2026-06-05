@@ -57,6 +57,7 @@ watch(() => useRoute().path, () => {
             <NuxtLink to="/hall-of-fame" class="navbar-link">Hall of Fame</NuxtLink>
             <NuxtLink to="/slr" class="navbar-link">Systematic Literature Review</NuxtLink>
             <NuxtLink to="/arverse" class="navbar-link">Arverse</NuxtLink>
+            <NuxtLink to="/podge" class="navbar-link">Podge Ecosystem</NuxtLink>
           </div>
 
           <!-- Hamburger Menu Button (Mobile) -->
@@ -130,7 +131,32 @@ watch(() => useRoute().path, () => {
       Hall of Fame
     </NuxtLink>
 
-    
+    <NuxtLink 
+      to="/slr" 
+      @click="isOpen = false" 
+      class="mobile-menu-link"
+    >
+      <span class="link-dot"></span>
+      Systematic Literature Review
+    </NuxtLink>
+
+    <NuxtLink 
+      to="/arverse" 
+      @click="isOpen = false" 
+      class="mobile-menu-link"
+    >
+      <span class="link-dot"></span>
+      Arverse
+    </NuxtLink>
+
+    <NuxtLink 
+      to="/podge" 
+      @click="isOpen = false" 
+      class="mobile-menu-link"
+    >
+      <span class="link-dot"></span>
+      Podge Ecosystem
+    </NuxtLink>
   </div>
 </div>
 <!-- FIX 3: Dihapus </transition> jika di atas memang tidak memakai pembuka <transition> -->

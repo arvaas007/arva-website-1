@@ -298,6 +298,23 @@ onMounted(() => {
         Open SLR App →
       </NuxtLink>
     </div>
+
+    <div class="program-card app-card">
+      <span class="program-label">Ecosystem</span>
+
+      <p class="program-number">03</p>
+
+      <h3>Podge Ecosystem</h3>
+
+      <p>
+        Podge Ecosystem adalah portal aplikasi yang menyediakan akses ke
+        platform digital Arva yang mendukung berbagai layanan ekosistem.
+      </p>
+
+      <NuxtLink to="/podge" class="arva-text-link">
+        Open Podge →
+      </NuxtLink>
+    </div>
   </div>
 </section>
       
