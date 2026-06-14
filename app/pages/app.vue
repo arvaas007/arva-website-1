@@ -6,6 +6,22 @@ useHead({
   ]
 })
 
+onMounted(() => {
+  const animatedEls = document.querySelectorAll('[data-animate]')
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.1 }
+  )
+  animatedEls.forEach((el) => observer.observe(el))
+})
+
 const apps = [
   {
     id: 'arverse',
@@ -13,6 +29,7 @@ const apps = [
     emoji: '🌌',
     label: 'Qur\'an App',
     name: 'Arverse',
+    fullName: 'Augmented Reality Quranic Verse',
     tagline: 'Digital Qur\'an with Gamification',
     description: 'Aplikasi Qur\'an digital dengan fitur gamifikasi setor murojaah harian. Kartu dipilih secara acak dan menampilkan ayat tujuan secara interaktif.',
     url: 'https://arverse.vercel.app/',
@@ -28,6 +45,7 @@ const apps = [
     emoji: '🧩',
     label: 'Ecosystem',
     name: 'Podge',
+    fullName: 'Podge-Ecosystem',
     tagline: 'Centralized App Portal',
     description: 'Portal aplikasi digital Arva — menyediakan akses terpusat ke berbagai layanan dan platform ekosistem Podge.',
     url: 'https://podge-ecosystem.vercel.app',
@@ -38,20 +56,31 @@ const apps = [
     tags: ['Portal', 'Ecosystem', 'Multi-platform'],
   },
   {
-    id: 'gmae-zeta',
+    id: 'gmae',
     number: '03',
-    emoji: '🎮',
-    label: 'Game',
-    name: 'Game Zeta',
-    tagline: 'Web-Based Game Project',
-    description: 'Proyek game berbasis web buatan Arva — eksplorasi desain interaktif, logika permainan, dan pengembangan UI/UX melalui medium gamifikasi.',
+    emoji: '⚙️',
+    label: 'Algorithm',
+    name: 'GMAE',
+    fullName: 'General Model Algorithmic Equilibrium',
+    tagline: 'Algorithmic Equilibrium Model',
+    description: 'Proyek model algoritmik berbasis web buatan Arva — eksplorasi keseimbangan sistem, logika komputasional, dan pengembangan model digital.',
     url: 'https://gmae-zeta.vercel.app',
     internalRoute: null,
     color: '#10b981',
     colorDark: '#059669',
     featured: false,
-    tags: ['Game', 'Interactive', 'Web Dev'],
+    tags: ['Algorithm', 'Model', 'Equilibrium'],
   },
+]
+
+// Ticker items — duplicated for infinite loop
+const tickerItems = [
+  { abbr: 'ARVERSE', full: 'Augmented Reality Quranic Verse', emoji: '🌌', color: '#3b82f6', url: 'https://arverse.vercel.app/' },
+  { abbr: 'PODGE', full: 'Podge-Ecosystem', emoji: '🧩', color: '#8b5cf6', url: 'https://podge-ecosystem.vercel.app' },
+  { abbr: 'GMAE', full: 'General Model Algorithmic Equilibrium', emoji: '⚙️', color: '#10b981', url: 'https://gmae-zeta.vercel.app' },
+  { abbr: 'ARVERSE', full: 'Augmented Reality Quranic Verse', emoji: '🌌', color: '#3b82f6', url: 'https://arverse.vercel.app/' },
+  { abbr: 'PODGE', full: 'Podge-Ecosystem', emoji: '🧩', color: '#8b5cf6', url: 'https://podge-ecosystem.vercel.app' },
+  { abbr: 'GMAE', full: 'General Model Algorithmic Equilibrium', emoji: '⚙️', color: '#10b981', url: 'https://gmae-zeta.vercel.app' },
 ]
 </script>
 
@@ -78,8 +107,78 @@ const apps = [
       </div>
     </section>
 
-    <!-- App Grid -->
+    <!-- ── LIVE TICKER / MARQUEE ────────────── -->
+    <div class="ticker-wrapper">
+      <div class="ticker-label">LIVE PROJECTS</div>
+      <div class="ticker-track-outer">
+        <div class="ticker-track">
+          <a
+            v-for="(item, i) in tickerItems"
+            :key="`tick-${i}`"
+            :href="item.url"
+            target="_blank"
+            rel="noopener"
+            class="ticker-item"
+            :style="`--tc: ${item.color}`"
+          >
+            <span class="ticker-dot" :style="`background: ${item.color}`"></span>
+            <span class="ticker-abbr">{{ item.abbr }}</span>
+            <span class="ticker-sep">—</span>
+            <span class="ticker-full">{{ item.full }}</span>
+            <span class="ticker-emoji">{{ item.emoji }}</span>
+            <span class="ticker-divider">◆</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── WEB3 PROJECT SHOWCASE ─────────────── -->
+    <section class="showcase-section">
+      <div class="showcase-header" data-animate="fade-up">
+        <p class="arva-kicker">Digital Portfolio</p>
+        <h2 class="showcase-title">3 Active Projects</h2>
+        <p class="showcase-sub">Semua platform berjalan live dan terus dikembangkan.</p>
+      </div>
+
+      <div class="showcase-grid">
+        <a
+          v-for="(item, i) in [tickerItems[0], tickerItems[1], tickerItems[2]]"
+          :key="item.abbr + i"
+          :href="item.url"
+          target="_blank"
+          rel="noopener"
+          class="showcase-card"
+          :style="`--sc: ${item.color}; --delay: ${i * 120}ms`"
+          data-animate="fade-up"
+        >
+          <div class="sc-top">
+            <div class="sc-logo" :style="`background: linear-gradient(135deg, ${item.color}22, ${item.color}44); border-color: ${item.color}55`">
+              <span class="sc-emoji">{{ item.emoji }}</span>
+            </div>
+            <div class="sc-live">
+              <span class="sc-live-dot"></span>
+              LIVE
+            </div>
+          </div>
+          <div class="sc-body">
+            <h3 class="sc-abbr" :style="`color: ${item.color}`">{{ item.abbr }}</h3>
+            <p class="sc-full">{{ item.full }}</p>
+          </div>
+          <div class="sc-footer">
+            <span class="sc-link">Visit →</span>
+            <span class="sc-url">{{ item.url.replace('https://', '') }}</span>
+          </div>
+          <div class="sc-glow" :style="`background: radial-gradient(circle at 0% 0%, ${item.color}18, transparent 70%)`"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- App Grid (full detail cards) -->
     <section class="app-grid-section">
+      <div class="section-heading-center" data-animate="fade-up">
+        <p class="arva-kicker">Deep Dive</p>
+        <h2>Detail Setiap Aplikasi</h2>
+      </div>
       <div class="app-grid">
         <article
           v-for="(app, i) in apps"
@@ -103,6 +202,7 @@ const apps = [
           <!-- Card Body -->
           <div class="app-card-body">
             <h2 class="app-name">{{ app.name }}</h2>
+            <p class="app-fullname">{{ app.fullName }}</p>
             <p class="app-tagline">{{ app.tagline }}</p>
             <p class="app-desc">{{ app.description }}</p>
 
@@ -257,11 +357,282 @@ const apps = [
   letter-spacing: 0.02em;
 }
 
+/* ── TICKER / MARQUEE ───────────────────── */
+.ticker-wrapper {
+  position: relative;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  height: 52px;
+  overflow: hidden;
+}
+
+.ticker-label {
+  flex-shrink: 0;
+  padding: 0 20px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: #0f172a;
+  background: #0f172a;
+  color: #ffffff;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.ticker-track-outer {
+  flex: 1;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  animation: ticker-scroll 18s linear infinite;
+  width: max-content;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 28px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  height: 52px;
+  cursor: pointer;
+}
+
+.ticker-item:hover {
+  background: #f8fafc;
+}
+
+.ticker-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.ticker-abbr {
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--tc);
+  letter-spacing: 0.06em;
+}
+
+.ticker-sep {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.ticker-full {
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.ticker-emoji {
+  font-size: 14px;
+}
+
+.ticker-divider {
+  color: #e2e8f0;
+  font-size: 8px;
+  margin-left: 10px;
+}
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.4); }
+}
+
+/* ── WEB3 SHOWCASE ──────────────────────── */
+.showcase-section {
+  background: #ffffff;
+  padding: 72px 24px 80px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.showcase-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+
+.showcase-title {
+  margin: 8px 0 0;
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 5vw, 60px);
+  letter-spacing: -0.05em;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.showcase-sub {
+  margin: 12px 0 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.showcase-card {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+  box-shadow: 0 2px 16px rgba(15, 23, 42, 0.05);
+  transition-delay: var(--delay, 0ms);
+}
+
+.showcase-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 56px rgba(15, 23, 42, 0.12);
+  border-color: var(--sc);
+}
+
+.sc-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.showcase-card:hover .sc-glow {
+  opacity: 1;
+}
+
+.sc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sc-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  border: 1.5px solid;
+  display: grid;
+  place-items: center;
+}
+
+.sc-emoji {
+  font-size: 22px;
+}
+
+.sc-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #16a34a;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.sc-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16a34a;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+.sc-body {
+  flex: 1;
+}
+
+.sc-abbr {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.sc-full {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.sc-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.sc-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--sc);
+}
+
+.sc-url {
+  font-size: 10px;
+  color: #cbd5e1;
+  font-family: monospace;
+}
+
 /* ── GRID ───────────────────────────────── */
 .app-grid-section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 64px 24px 80px;
+}
+
+.section-heading-center {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+
+.section-heading-center h2 {
+  margin: 8px 0 0;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 4vw, 52px);
+  letter-spacing: -0.05em;
+  color: #0f172a;
 }
 
 .app-grid {
@@ -300,14 +671,12 @@ const apps = [
 .app-card--featured {
   background: #0f172a;
   border-color: rgba(255, 255, 255, 0.08);
-  grid-column: span 1;
 }
 
 .app-card--featured:hover {
   border-color: var(--app-color);
 }
 
-/* Glow effect */
 .app-card-glow {
   position: absolute;
   inset: 0;
@@ -382,7 +751,7 @@ const apps = [
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .app-name {
@@ -397,8 +766,20 @@ const apps = [
   color: #f8fafc;
 }
 
-.app-tagline {
+.app-fullname {
   margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 0.02em;
+}
+
+.app-card--featured .app-fullname {
+  color: #475569;
+}
+
+.app-tagline {
+  margin: 4px 0 0;
   font-size: 13px;
   font-weight: 600;
   color: var(--app-color);
@@ -407,7 +788,7 @@ const apps = [
 }
 
 .app-desc {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   color: #64748b;
   font-size: 14px;
   line-height: 1.7;
@@ -417,12 +798,11 @@ const apps = [
   color: #94a3b8;
 }
 
-/* Tags */
 .app-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .app-tag {
@@ -528,7 +908,8 @@ const apps = [
 
 /* ── RESPONSIVE ─────────────────────────── */
 @media (max-width: 900px) {
-  .app-grid {
+  .app-grid,
+  .showcase-grid {
     grid-template-columns: 1fr;
   }
 
@@ -549,6 +930,10 @@ const apps = [
 
   .app-name {
     font-size: 22px;
+  }
+
+  .ticker-full {
+    display: none;
   }
 }
 </style>
