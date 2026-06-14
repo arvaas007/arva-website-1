@@ -309,7 +309,7 @@ onMounted(() => {
         logika permainan, dan pengembangan UI/UX melalui medium gamifikasi.
       </p>
 
-      <a href="https://game-zeta.vercel.app" target="_blank" rel="noopener" class="arva-text-link">
+      <a href="https://gmae-zeta.vercel.app" target="_blank" rel="noopener" class="arva-text-link">
         Open Game Zeta →
       </a>
     </div>
