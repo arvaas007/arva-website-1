@@ -55,6 +55,7 @@ watch(() => useRoute().path, () => {
             <NuxtLink to="/writings" class="navbar-link">Writings</NuxtLink>
             <NuxtLink to="/contact" class="navbar-link">Contact</NuxtLink>
             <NuxtLink to="/hall-of-fame" class="navbar-link">Hall of Fame</NuxtLink>
+            <NuxtLink to="/app" class="navbar-link">Apps</NuxtLink>
             <NuxtLink to="/arverse" class="navbar-link">Arverse</NuxtLink>
             <NuxtLink to="/podge" class="navbar-link">Podge</NuxtLink>
           </div>
@@ -128,6 +129,15 @@ watch(() => useRoute().path, () => {
     >
       <span class="link-dot"></span>
       Hall of Fame
+    </NuxtLink>
+
+    <NuxtLink 
+      to="/app" 
+      @click="isOpen = false" 
+      class="mobile-menu-link"
+    >
+      <span class="link-dot"></span>
+      Apps
     </NuxtLink>
 
     <NuxtLink 
