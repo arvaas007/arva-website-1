@@ -271,9 +271,8 @@ onMounted(() => {
       <h3>Arverse</h3>
 
       <p>
-        Arverse merupakan aplikasi Qur'an digital yang berfungsi untuk setor murojaah harian
-        dengan fitur gamifikasi berupa kartu yang dipilih secara acak dan menampilkan ayat
-        tujuan.
+        Aplikasi Qur'an digital dengan fitur gamifikasi setor murojaah harian —
+        kartu dipilih secara acak dan menampilkan ayat tujuan secara interaktif.
       </p>
 
       <NuxtLink to="/arverse" class="arva-text-link">
@@ -282,38 +281,37 @@ onMounted(() => {
     </div>
 
     <div class="program-card app-card">
-      <span class="program-label">Research Tool</span>
+      <span class="program-label">Ecosystem</span>
 
       <p class="program-number">02</p>
 
-      <h3>SLR Application</h3>
+      <h3>Podge</h3>
 
       <p>
-        SLR Application dirancang sebagai fitur pendukung untuk membantu proses
-        pencarian, pengelolaan, dan dokumentasi artikel ilmiah dalam kajian
-        Systematic Literature Review secara lebih terstruktur.
-      </p>
-
-      <NuxtLink to="/slr" class="arva-text-link">
-        Open SLR App →
-      </NuxtLink>
-    </div>
-
-    <div class="program-card app-card">
-      <span class="program-label">Ecosystem</span>
-
-      <p class="program-number">03</p>
-
-      <h3>Podge Ecosystem</h3>
-
-      <p>
-        Podge Ecosystem adalah portal aplikasi yang menyediakan akses ke
-        platform digital Arva yang mendukung berbagai layanan ekosistem.
+        Portal aplikasi digital Arva — menyediakan akses terpusat ke berbagai
+        layanan dan platform ekosistem Podge.
       </p>
 
       <NuxtLink to="/podge" class="arva-text-link">
         Open Podge →
       </NuxtLink>
+    </div>
+
+    <div class="program-card app-card">
+      <span class="program-label">Game</span>
+
+      <p class="program-number">03</p>
+
+      <h3>Game Zeta</h3>
+
+      <p>
+        Proyek game berbasis web buatan Arva — eksplorasi desain interaktif,
+        logika permainan, dan pengembangan UI/UX melalui medium gamifikasi.
+      </p>
+
+      <a href="https://game-zeta.vercel.app" target="_blank" rel="noopener" class="arva-text-link">
+        Open Game Zeta →
+      </a>
     </div>
   </div>
 </section>

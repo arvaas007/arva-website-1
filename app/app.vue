@@ -55,9 +55,8 @@ watch(() => useRoute().path, () => {
             <NuxtLink to="/writings" class="navbar-link">Writings</NuxtLink>
             <NuxtLink to="/contact" class="navbar-link">Contact</NuxtLink>
             <NuxtLink to="/hall-of-fame" class="navbar-link">Hall of Fame</NuxtLink>
-            <NuxtLink to="/slr" class="navbar-link">Systematic Literature Review</NuxtLink>
             <NuxtLink to="/arverse" class="navbar-link">Arverse</NuxtLink>
-            <NuxtLink to="/podge" class="navbar-link">Podge Ecosystem</NuxtLink>
+            <NuxtLink to="/podge" class="navbar-link">Podge</NuxtLink>
           </div>
 
           <!-- Hamburger Menu Button (Mobile) -->
@@ -132,15 +131,6 @@ watch(() => useRoute().path, () => {
     </NuxtLink>
 
     <NuxtLink 
-      to="/slr" 
-      @click="isOpen = false" 
-      class="mobile-menu-link"
-    >
-      <span class="link-dot"></span>
-      Systematic Literature Review
-    </NuxtLink>
-
-    <NuxtLink 
       to="/arverse" 
       @click="isOpen = false" 
       class="mobile-menu-link"
@@ -155,7 +145,7 @@ watch(() => useRoute().path, () => {
       class="mobile-menu-link"
     >
       <span class="link-dot"></span>
-      Podge Ecosystem
+      Podge
     </NuxtLink>
   </div>
 </div>
