@@ -19,6 +19,26 @@
       "source": "/arverse/:path*",
       "destination": "https://arverse.vercel.app/:path*",
       "permanent": true
+    },
+    {
+      "source": "/kopdes-ai-backend",
+      "destination": "https://kopdes-ai.vercel.app/",
+      "permanent": true
+    },
+    {
+      "source": "/kopdes-ai-backend/:path*",
+      "destination": "https://kopdes-ai.vercel.app/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/aksa-brin",
+      "destination": "https://aksa-brin.vercel.app/",
+      "permanent": true
+    },
+    {
+      "source": "/aksa-brin/:path*",
+      "destination": "https://aksa-brin.vercel.app/:path*",
+      "permanent": true
     }
   ]
 }

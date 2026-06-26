@@ -71,6 +71,38 @@ const apps = [
     featured: false,
     tags: ['Algorithm', 'Model', 'Equilibrium'],
   },
+  {
+    id: 'kopdes-ai-backend',
+    number: '04',
+    emoji: '🤖',
+    label: 'Backend API',
+    name: 'Kopdes AI Backend',
+    fullName: 'Kopdes AI Backend Server',
+    tagline: 'Backend API for Kopdes AI',
+    description: 'Layanan backend API berbasis Express dan Supabase untuk mendukung operasional kecerdasan buatan (AI) pada aplikasi Kopdes.',
+    url: 'https://www.arva-as.my.id/kopdes-ai-backend',
+    internalRoute: null,
+    color: '#ec4899',
+    colorDark: '#be185d',
+    featured: false,
+    tags: ['Backend', 'API', 'AI', 'Express', 'Supabase'],
+  },
+  {
+    id: 'aksa-brin',
+    number: '05',
+    emoji: '💼',
+    label: 'Finance & Research',
+    name: 'Aksa BRIN',
+    fullName: 'AKSARA — Aplikasi Keuangan Syariah',
+    tagline: 'Islamic Financial App & Research',
+    description: 'Aplikasi Keuangan Syariah (AKSARA) hasil riset kolaborasi, dikembangkan untuk membantu pencatatan keuangan dan manajemen transaksi secara syariah.',
+    url: 'https://www.arva-as.my.id/aksa-brin',
+    internalRoute: null,
+    color: '#f59e0b',
+    colorDark: '#b45309',
+    featured: false,
+    tags: ['Finance', 'Research', 'Sharia', 'BRIN'],
+  },
 ]
 
 // Ticker items — duplicated for infinite loop
@@ -78,9 +110,13 @@ const tickerItems = [
   { abbr: 'ARVERSE', full: 'Augmented Reality Quranic Verse', emoji: '🌌', color: '#3b82f6', url: 'https://arverse.vercel.app/' },
   { abbr: 'PODGE', full: 'Podge-Ecosystem', emoji: '🧩', color: '#8b5cf6', url: 'https://podge-ecosystem.vercel.app' },
   { abbr: 'GMAE', full: 'General Model Algorithmic Equilibrium', emoji: '⚙️', color: '#10b981', url: 'https://gmae-zeta.vercel.app' },
+  { abbr: 'KOPDES API', full: 'Kopdes AI Backend Server', emoji: '🤖', color: '#ec4899', url: 'https://www.arva-as.my.id/kopdes-ai-backend' },
+  { abbr: 'AKSA BRIN', full: 'AKSARA Keuangan Syariah', emoji: '💼', color: '#f59e0b', url: 'https://www.arva-as.my.id/aksa-brin' },
   { abbr: 'ARVERSE', full: 'Augmented Reality Quranic Verse', emoji: '🌌', color: '#3b82f6', url: 'https://arverse.vercel.app/' },
   { abbr: 'PODGE', full: 'Podge-Ecosystem', emoji: '🧩', color: '#8b5cf6', url: 'https://podge-ecosystem.vercel.app' },
   { abbr: 'GMAE', full: 'General Model Algorithmic Equilibrium', emoji: '⚙️', color: '#10b981', url: 'https://gmae-zeta.vercel.app' },
+  { abbr: 'KOPDES API', full: 'Kopdes AI Backend Server', emoji: '🤖', color: '#ec4899', url: 'https://www.arva-as.my.id/kopdes-ai-backend' },
+  { abbr: 'AKSA BRIN', full: 'AKSARA Keuangan Syariah', emoji: '💼', color: '#f59e0b', url: 'https://www.arva-as.my.id/aksa-brin' },
 ]
 </script>
 
@@ -136,13 +172,13 @@ const tickerItems = [
     <section class="showcase-section">
       <div class="showcase-header" data-animate="fade-up">
         <p class="arva-kicker">Digital Portfolio</p>
-        <h2 class="showcase-title">3 Active Projects</h2>
+        <h2 class="showcase-title">{{ apps.length }} Active Projects</h2>
         <p class="showcase-sub">Semua platform berjalan live dan terus dikembangkan.</p>
       </div>
 
       <div class="showcase-grid">
         <a
-          v-for="(item, i) in [tickerItems[0], tickerItems[1], tickerItems[2]]"
+          v-for="(item, i) in tickerItems.slice(0, 5)"
           :key="item.abbr + i"
           :href="item.url"
           target="_blank"
