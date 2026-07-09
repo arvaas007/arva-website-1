@@ -32,12 +32,12 @@
     },
     {
       "source": "/aksa-brin",
-      "destination": "https://aksara-brin.vercel.app/",
+      "destination": "https://aksalab.web.id/",
       "permanent": true
     },
     {
       "source": "/aksa-brin/:path*",
-      "destination": "https://aksara-brin.vercel.app/:path*",
+      "destination": "https://aksalab.web.id/:path*",
       "permanent": true
     },
     {
