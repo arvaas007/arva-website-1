@@ -42,7 +42,7 @@
     },
     {
       "source": "/edutwin-lms",
-      "destination": "https://edutwin-lms.vercel.app/",
+      "destination": "https://edutwin-lms.vercel.app/login",
       "permanent": true
     },
     {
@@ -58,6 +58,16 @@
     {
       "source": "/agavera-labs/:path*",
       "destination": "https://agavera-labs.vercel.app/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/vij-journal",
+      "destination": "https://vij-journal.vercel.app/",
+      "permanent": true
+    },
+    {
+      "source": "/vij-journal/:path*",
+      "destination": "https://vij-journal.vercel.app/:path*",
       "permanent": true
     }
   ]

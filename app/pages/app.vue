@@ -135,6 +135,22 @@ const apps = [
     featured: false,
     tags: ['Research', 'AI', 'Innovation', 'Vercel'],
   },
+  {
+    id: 'vij-journal',
+    number: '08',
+    emoji: '📓',
+    label: 'Academic Journal',
+    name: 'VIJ Journal',
+    fullName: 'VIJ Journal Platform',
+    tagline: 'Academic & Research Journal',
+    description: 'Platform jurnal akademik digital untuk publikasi riset, artikel ilmiah, dan dokumentasi kajian akademis secara terstruktur.',
+    url: 'https://www.arva-as.my.id/vij-journal',
+    internalRoute: null,
+    color: '#14b8a6',
+    colorDark: '#0f766e',
+    featured: false,
+    tags: ['Journal', 'Academic', 'Publication', 'Research'],
+  },
 ]
 
 // Ticker items — duplicated for infinite loop
@@ -146,6 +162,7 @@ const tickerItems = [
   { abbr: 'AKSA BRIN', full: 'AKSARA Keuangan Syariah', emoji: '💼', color: '#f59e0b', url: 'https://www.arva-as.my.id/aksa-brin' },
   { abbr: 'EDUTWIN LMS', full: 'Edutwin Learning Management System', emoji: '🎓', color: '#0284c7', url: 'https://www.arva-as.my.id/edutwin-lms' },
   { abbr: 'AGAVERA LABS', full: 'Agavera Labs Studio', emoji: '🧪', color: '#6366f1', url: 'https://www.arva-as.my.id/agavera-labs' },
+  { abbr: 'VIJ JOURNAL', full: 'VIJ Journal Platform', emoji: '📓', color: '#14b8a6', url: 'https://www.arva-as.my.id/vij-journal' },
   { abbr: 'ARVERSE', full: 'Augmented Reality Quranic Verse', emoji: '🌌', color: '#3b82f6', url: 'https://arverse.vercel.app/' },
   { abbr: 'PODGE', full: 'Podge-Ecosystem', emoji: '🧩', color: '#8b5cf6', url: 'https://podge-ecosystem.vercel.app' },
   { abbr: 'GMAE', full: 'General Model Algorithmic Equilibrium', emoji: '⚙️', color: '#10b981', url: 'https://gmae-zeta.vercel.app' },
@@ -153,6 +170,7 @@ const tickerItems = [
   { abbr: 'AKSA BRIN', full: 'AKSARA Keuangan Syariah', emoji: '💼', color: '#f59e0b', url: 'https://www.arva-as.my.id/aksa-brin' },
   { abbr: 'EDUTWIN LMS', full: 'Edutwin Learning Management System', emoji: '🎓', color: '#0284c7', url: 'https://www.arva-as.my.id/edutwin-lms' },
   { abbr: 'AGAVERA LABS', full: 'Agavera Labs Studio', emoji: '🧪', color: '#6366f1', url: 'https://www.arva-as.my.id/agavera-labs' },
+  { abbr: 'VIJ JOURNAL', full: 'VIJ Journal Platform', emoji: '📓', color: '#14b8a6', url: 'https://www.arva-as.my.id/vij-journal' },
 ]
 </script>
 
@@ -214,7 +232,7 @@ const tickerItems = [
 
       <div class="showcase-grid">
         <a
-          v-for="(item, i) in tickerItems.slice(0, 7)"
+          v-for="(item, i) in tickerItems.slice(0, 8)"
           :key="item.abbr + i"
           :href="item.url"
           target="_blank"
