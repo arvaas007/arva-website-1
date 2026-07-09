@@ -103,6 +103,38 @@ const apps = [
     featured: false,
     tags: ['Finance', 'Research', 'Sharia', 'BRIN'],
   },
+  {
+    id: 'edutwin-lms',
+    number: '06',
+    emoji: '🎓',
+    label: 'Education Platform',
+    name: 'Edutwin LMS',
+    fullName: 'Edutwin Learning Management System',
+    tagline: 'Interactive Learning Platform',
+    description: 'Sistem manajemen pembelajaran digital interaktif yang dirancang untuk mendukung kolaborasi akademis dan proses belajar-mengajar modern.',
+    url: 'https://www.arva-as.my.id/edutwin-lms',
+    internalRoute: null,
+    color: '#0284c7',
+    colorDark: '#0369a1',
+    featured: false,
+    tags: ['LMS', 'Education', 'Interactive', 'Nuxt'],
+  },
+  {
+    id: 'agavera-labs',
+    number: '07',
+    emoji: '🧪',
+    label: 'Research Lab',
+    name: 'Agavera Labs',
+    fullName: 'Agavera Labs Studio',
+    tagline: 'Research & Innovation Studio',
+    description: 'Laboratorium riset dan inkubasi teknologi digital untuk eksplorasi AI, web terdistribusi, dan ekosistem komputasi canggih.',
+    url: 'https://www.arva-as.my.id/agavera-labs',
+    internalRoute: null,
+    color: '#6366f1',
+    colorDark: '#4f46e5',
+    featured: false,
+    tags: ['Research', 'AI', 'Innovation', 'Vercel'],
+  },
 ]
 
 // Ticker items — duplicated for infinite loop
@@ -112,11 +144,15 @@ const tickerItems = [
   { abbr: 'GMAE', full: 'General Model Algorithmic Equilibrium', emoji: '⚙️', color: '#10b981', url: 'https://gmae-zeta.vercel.app' },
   { abbr: 'KOPDES API', full: 'Kopdes AI Backend Server', emoji: '🤖', color: '#ec4899', url: 'https://www.arva-as.my.id/kopdes-ai-backend' },
   { abbr: 'AKSA BRIN', full: 'AKSARA Keuangan Syariah', emoji: '💼', color: '#f59e0b', url: 'https://www.arva-as.my.id/aksa-brin' },
+  { abbr: 'EDUTWIN LMS', full: 'Edutwin Learning Management System', emoji: '🎓', color: '#0284c7', url: 'https://www.arva-as.my.id/edutwin-lms' },
+  { abbr: 'AGAVERA LABS', full: 'Agavera Labs Studio', emoji: '🧪', color: '#6366f1', url: 'https://www.arva-as.my.id/agavera-labs' },
   { abbr: 'ARVERSE', full: 'Augmented Reality Quranic Verse', emoji: '🌌', color: '#3b82f6', url: 'https://arverse.vercel.app/' },
   { abbr: 'PODGE', full: 'Podge-Ecosystem', emoji: '🧩', color: '#8b5cf6', url: 'https://podge-ecosystem.vercel.app' },
   { abbr: 'GMAE', full: 'General Model Algorithmic Equilibrium', emoji: '⚙️', color: '#10b981', url: 'https://gmae-zeta.vercel.app' },
   { abbr: 'KOPDES API', full: 'Kopdes AI Backend Server', emoji: '🤖', color: '#ec4899', url: 'https://www.arva-as.my.id/kopdes-ai-backend' },
   { abbr: 'AKSA BRIN', full: 'AKSARA Keuangan Syariah', emoji: '💼', color: '#f59e0b', url: 'https://www.arva-as.my.id/aksa-brin' },
+  { abbr: 'EDUTWIN LMS', full: 'Edutwin Learning Management System', emoji: '🎓', color: '#0284c7', url: 'https://www.arva-as.my.id/edutwin-lms' },
+  { abbr: 'AGAVERA LABS', full: 'Agavera Labs Studio', emoji: '🧪', color: '#6366f1', url: 'https://www.arva-as.my.id/agavera-labs' },
 ]
 </script>
 
@@ -178,7 +214,7 @@ const tickerItems = [
 
       <div class="showcase-grid">
         <a
-          v-for="(item, i) in tickerItems.slice(0, 5)"
+          v-for="(item, i) in tickerItems.slice(0, 7)"
           :key="item.abbr + i"
           :href="item.url"
           target="_blank"

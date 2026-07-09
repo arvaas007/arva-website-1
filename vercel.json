@@ -49,6 +49,16 @@
       "source": "/edutwin-lms/:path*",
       "destination": "https://edutwin-lms.vercel.app/:path*",
       "permanent": true
+    },
+    {
+      "source": "/agavera-labs",
+      "destination": "https://agavera-labs.vercel.app/",
+      "permanent": true
+    },
+    {
+      "source": "/agavera-labs/:path*",
+      "destination": "https://agavera-labs.vercel.app/:path*",
+      "permanent": true
     }
   ]
 }
