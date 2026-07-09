@@ -39,6 +39,16 @@
       "source": "/aksa-brin/:path*",
       "destination": "https://aksara-brin.vercel.app/:path*",
       "permanent": true
+    },
+    {
+      "source": "/edutwin-lms",
+      "destination": "https://edutwin-lms.vercel.app/",
+      "permanent": true
+    },
+    {
+      "source": "/edutwin-lms/:path*",
+      "destination": "https://edutwin-lms.vercel.app/:path*",
+      "permanent": true
     }
   ]
 }
